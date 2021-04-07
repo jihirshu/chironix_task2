@@ -19,9 +19,8 @@ Assuming that your system has the husky simulation package, husky navigation pac
 	sudo apt-get install ros-melodic-husky-navigation
 	sudo apt-get install ros-melodic-husky-viz
 
-Please make sure that everything is in order by running these four commands in separate terminals : 
+Please make sure that everything is in order by running these three commands in separate terminals : 
 
-	roslaunch husky_gazebo husky_empty_world.launch
 	roslaunch husky_gazebo husky_playpen.launch
 	roslaunch husky_viz view_robot.launch
 	roslaunch husky_navigation amcl_demo.launch
