@@ -49,3 +49,5 @@ To launch task 2 python node, open a terminal and execute the following commands
     roslaunch task2_python task2_python.launch
     
 Please wait when the launch files are executing as some time delay has been added between internal node launches.
+
+<strong>The csv files are located in the src folder of the respective packages</strong>>

@@ -1,7 +1,6 @@
  #include <ros/ros.h>
  #include <move_base_msgs/MoveBaseAction.h>
  #include <actionlib/client/simple_action_client.h>
-
  #include <iostream>
  #include <fstream>
  #include <sstream>
@@ -13,26 +12,27 @@
  {
    ros::init(argc, argv, "task2_cpp");
    std::string csv_path;
+   // fetches the absolute path of the csv file through the param set in launch file
    ros::param::param<std::string>("/task2_cpp/CoordsCSVFile", csv_path, "io.csv");
-   std::cout<<csv_path<<std::endl;
    std::vector<double> coords;
    std::ifstream csvfile(csv_path);
    std::string line, csvItem;
+   
+   // reads the first line of the csv file and converts them to double type
    if (csvfile.is_open())
-   while(getline(csvfile, line))
-   {
-      std::istringstream myline(line);
-      while(getline(myline, csvItem, ',')) 
-      {   csvItem.erase(std::remove(csvItem.begin(),csvItem.end(),' '),csvItem.end());
-          coords.push_back(stod(csvItem));
+   { 
+     while(getline(csvfile, line))
+     {
+        std::istringstream myline(line);
+        while(getline(myline, csvItem, ',')) 
+        {   csvItem.erase(std::remove(csvItem.begin(),csvItem.end(),' '),csvItem.end());
+            coords.push_back(stod(csvItem));
 
-      }
+        }
 
-      break;
+        break;
+     }
    }
-
-
-   //tell the action client that we want to spin a thread by default
    MoveBaseClient ac("move_base", true);
  
    //wait for the action server to come up
@@ -42,7 +42,9 @@
  
    move_base_msgs::MoveBaseGoal goal;
 
-   //we'll send a goal to the robot to move 1 meter forward
+   // sets the frame id to map so that the nodes understand 
+   // that the coordinates are with respect to the map and not the robot base itself
+
    goal.target_pose.header.frame_id = "map";
    goal.target_pose.header.stamp = ros::Time::now();
  

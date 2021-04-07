@@ -11,6 +11,10 @@ def moveToLoc(x,y):
     client.wait_for_server()
 
     goal = MoveBaseGoal()
+
+    # set frame id to map to convey that co-ordinates are with respect to map 
+    # and not the robot base itself
+
     goal.target_pose.header.frame_id = "map"
     goal.target_pose.header.stamp = rospy.Time.now()
     goal.target_pose.pose.position.x = x
@@ -31,6 +35,8 @@ def moveToLoc(x,y):
 if __name__ == '__main__':
     try:
         rospy.init_node('task2_python', anonymous=True)
+
+        # fetches the absolute path of the csv file
         csvPath = rospy.get_param('/task2_python/CoordsCSVFile', 'io.csv')
         x = None
         y = None
@@ -52,6 +58,6 @@ if __name__ == '__main__':
     except rospy.ROSInterruptException:
         with open(csvPath, mode='a') as wfile:
             writer = csv.writer(wfile, delimiter=',', lineterminator='\n')
-            writer.writerow(["There was a problem moving Husky the desired location"])
-        rospy.loginfo("There was a problem moving Husky the desired location")
+            writer.writerow(["There was a problem moving Husky to the desired location"])
+        rospy.loginfo("There was a problem moving Husky to the desired location")
         
