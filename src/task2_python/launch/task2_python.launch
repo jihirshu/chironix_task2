@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+   
+	<include file="$(find husky_gazebo)/launch/husky_playpen.launch">
+
+    </include>
+
+	<node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+            args="8 husky_viz view_robot.launch"
+			name="Task_2_rviz" output="screen">
+	</node>
+
+	<node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+            args="16 husky_navigation amcl_demo.launch"
+			name="Task_2_amcl" output="screen">
+	</node>
+    
+ 	<node pkg="timed_roslaunch" type="timed_roslaunch.sh"
+            args="24 task2_python navigate.launch"
+			name="Task_2_PYTHON" output="screen">
+	</node>
+    
+   
+</launch>

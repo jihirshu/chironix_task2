@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+   <node pkg="task2_python" name="task2_python" type="task2_python.py" >
+   <param name="CoordsCSVFile" value="$(find task2_python)/src/io.csv"/>   		
+   </node>
+</launch>

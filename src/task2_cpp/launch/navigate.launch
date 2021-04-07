@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+   <node pkg="task2_cpp" name="task2_cpp" type="task2_cpp" >
+   <param name="CoordsCSVFile" value="$(find task2_cpp)/src/io.csv"/>   		
+   </node>
+</launch>
