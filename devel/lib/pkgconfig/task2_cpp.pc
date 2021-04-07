@@ -1,0 +1,8 @@
+prefix=/home/jihirshu/workspace/husky_task2/devel
+
+Name: task2_cpp
+Description: Description of task2_cpp
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
