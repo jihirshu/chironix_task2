@@ -12,8 +12,11 @@
  int main(int argc, char** argv)
  {
    ros::init(argc, argv, "task2_cpp");
+   std::string csv_path;
+   ros::param::param<std::string>("/task2_cpp/CoordsCSVFile", csv_path, "io.csv");
+   std::cout<<csv_path<<std::endl;
    std::vector<double> coords;
-   std::ifstream csvfile("io.csv");
+   std::ifstream csvfile(csv_path);
    std::string line, csvItem;
    if (csvfile.is_open())
    while(getline(csvfile, line))
@@ -50,7 +53,7 @@
    ac.sendGoal(goal);
  
   ac.waitForResult();
-  std::ofstream myfile("io.csv", std::ios::app | std::ios::binary);
+  std::ofstream myfile(csv_path, std::ios::app | std::ios::binary);
    if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
     {
       ROS_INFO("Husky has moved to the desired location");

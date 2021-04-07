@@ -6,7 +6,7 @@ import csv
 
 
 def moveToLoc(x,y):
-    rospy.init_node('task2_python', anonymous=True)
+    
     client = actionlib.SimpleActionClient('move_base',MoveBaseAction)
     client.wait_for_server()
 
@@ -30,9 +30,11 @@ def moveToLoc(x,y):
 
 if __name__ == '__main__':
     try:
+        rospy.init_node('task2_python', anonymous=True)
+        csvPath = rospy.get_param('/task2_python/CoordsCSVFile', 'io.csv')
         x = None
         y = None
-        with open('io.csv') as file:
+        with open(csvPath) as file:
             lines = csv.reader(file, delimiter=',')
             for line in lines:
                 x = line[0]
@@ -43,12 +45,12 @@ if __name__ == '__main__':
         result = moveToLoc(x,y)
 
         if result:
-            with open('io.csv', mode='a') as wfile:
+            with open(csvPath, mode='a') as wfile:
                 writer = csv.writer(wfile, delimiter=',', lineterminator='\n')
                 writer.writerow(["Husky has moved to the desired location"])
             rospy.loginfo("Husky has moved to the desired location")
     except rospy.ROSInterruptException:
-        with open('io.csv', mode='w') as wfile:
+        with open(csvPath, mode='a') as wfile:
             writer = csv.writer(wfile, delimiter=',', lineterminator='\n')
             writer.writerow(["There was a problem moving Husky the desired location"])
         rospy.loginfo("There was a problem moving Husky the desired location")
