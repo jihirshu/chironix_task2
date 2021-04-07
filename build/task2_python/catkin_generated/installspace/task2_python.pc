@@ -1,0 +1,8 @@
+prefix=/home/jihirshu/workspace/husky_task2/install
+
+Name: task2_python
+Description: Description of task2_python
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

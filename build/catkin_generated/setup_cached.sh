@@ -7,8 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/jihirshu/workspace/husky_task2/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/jihirshu/workspace/husky_task2/devel/lib:$LD_LIBRARY_PATH"
 export PWD='/home/jihirshu/workspace/husky_task2/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/jihirshu/workspace/husky_task2/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/jihirshu/workspace/husky_task2/src:$ROS_PACKAGE_PATH"

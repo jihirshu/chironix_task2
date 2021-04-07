@@ -1648,6 +1648,24 @@ clean: task2_cpp/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory task2_python
+
+# Convenience name for "all" pass in the directory.
+task2_python/all:
+
+.PHONY : task2_python/all
+
+# Convenience name for "clean" pass in the directory.
+task2_python/clean:
+
+.PHONY : task2_python/clean
+
+# Convenience name for "preinstall" pass in the directory.
+task2_python/preinstall:
+
+.PHONY : task2_python/preinstall
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

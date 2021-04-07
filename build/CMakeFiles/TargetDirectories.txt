@@ -79,3 +79,10 @@
 /home/jihirshu/workspace/husky_task2/build/task2_cpp/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
 /home/jihirshu/workspace/husky_task2/build/task2_cpp/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
 /home/jihirshu/workspace/husky_task2/build/task2_cpp/CMakeFiles/geometry_msgs_generate_messages_py.dir
+/home/jihirshu/workspace/husky_task2/build/task2_python/CMakeFiles/install/strip.dir
+/home/jihirshu/workspace/husky_task2/build/task2_python/CMakeFiles/edit_cache.dir
+/home/jihirshu/workspace/husky_task2/build/task2_python/CMakeFiles/list_install_components.dir
+/home/jihirshu/workspace/husky_task2/build/task2_python/CMakeFiles/test.dir
+/home/jihirshu/workspace/husky_task2/build/task2_python/CMakeFiles/install/local.dir
+/home/jihirshu/workspace/husky_task2/build/task2_python/CMakeFiles/rebuild_cache.dir
+/home/jihirshu/workspace/husky_task2/build/task2_python/CMakeFiles/install.dir

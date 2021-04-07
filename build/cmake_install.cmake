@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/jihirshu/workspace/husky_task2/build/gtest/cmake_install.cmake")
   include("/home/jihirshu/workspace/husky_task2/build/task2_cpp/cmake_install.cmake")
+  include("/home/jihirshu/workspace/husky_task2/build/task2_python/cmake_install.cmake")
 
 endif()
 
