@@ -53,11 +53,13 @@ if __name__ == '__main__':
         if result:
             with open(csvPath, mode='a') as wfile:
                 writer = csv.writer(wfile, delimiter=',', lineterminator='\n')
+                writer.writerow([])
                 writer.writerow(["Husky has moved to the desired location"])
             rospy.loginfo("Husky has moved to the desired location")
     except rospy.ROSInterruptException:
         with open(csvPath, mode='a') as wfile:
             writer = csv.writer(wfile, delimiter=',', lineterminator='\n')
+            writer.writerow([])
             writer.writerow(["There was a problem moving Husky to the desired location"])
         rospy.loginfo("There was a problem moving Husky to the desired location")
         

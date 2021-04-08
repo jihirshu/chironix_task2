@@ -59,11 +59,13 @@
    if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
     {
       ROS_INFO("Husky has moved to the desired location");
+      myfile <<std::endl;
       myfile << "Husky has moved to the desired location" <<std::endl;
     }   
    else
    {
      ROS_INFO("Husky movement not possible");
+     myfile <<std::endl;
      myfile << "Husky movement not possible"<< std::endl;
    }
   
